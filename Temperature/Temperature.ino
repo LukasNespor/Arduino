@@ -1,5 +1,3 @@
-#include <math.h>
-
 float tempC;
 int reading;
 int tempPin = 0;
@@ -44,7 +42,7 @@ void loop()
     digitalWrite(ledOrange, LOW);
     digitalWrite(ledRed, LOW);
   }
-  
+
   if(tempC > 21 && tempC < 25)
   {
     digitalWrite(ledGreen, LOW);
@@ -52,11 +50,11 @@ void loop()
     digitalWrite(ledOrange, HIGH);
     digitalWrite(ledRed, LOW);
   }
-  
+
   if(tempC > 25)
   {
     digitalWrite(ledGreen, LOW);
-    digitalWrite(ledOrange, LOW); 
+    digitalWrite(ledOrange, LOW);
     analogWrite(ledRed, 255);
     digitalWrite(ledRed, HIGH);
   }
@@ -64,7 +62,6 @@ void loop()
   digitalWrite(pinDot, HIGH);
 
   String tempStr = String(tempC);
-  //int len = tempStr.length();
 
   for (int i = 0; i < tempStr.length() - 1; i++)
   {
